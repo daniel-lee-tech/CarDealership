@@ -30,9 +30,13 @@ public class AuthController {
             BindingResult bindingResult
     ) {
 
-        if (bindingResult.hasErrors()) {
-            return "/signup.html";
+        if (bindingResult.hasErrors()) return "/signup.html";
+
+        try {
+            User newUser = User
         }
+
+
         return "redirect:/home";
     }
 }

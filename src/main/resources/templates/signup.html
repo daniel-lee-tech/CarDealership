@@ -20,7 +20,6 @@
     <input th:field="*{passwordConfirmation}" />
     <td th:if="${#fields.hasErrors('passwordConfirmation')}" th:errors="*{passwordConfirmation}">Password Confirmation Error</td>
 
-    <div th:text="${#fields.hasErrors('Fields must match')}"></div>
     <button type="submit">Submit</button>
 </form>
 

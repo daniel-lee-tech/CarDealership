@@ -29,9 +29,11 @@ public class SameFieldValueValidator implements
                 return true;
             } else {
                 context.disableDefaultConstraintViolation();
-                context.buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate()).addPropertyNode("matchingField").addConstraintViolation()
+                context
+                        .buildConstraintViolationWithTemplate(context.getDefaultConstraintMessageTemplate())
+                        .addPropertyNode(secondFieldName)
+                        .addConstraintViolation();
             }
-
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
@@ -42,5 +44,4 @@ public class SameFieldValueValidator implements
 
         return false;
     }
-
 }
